@@ -6,21 +6,15 @@ services:
     image: personalhealthtrain/file-download-service-iris:0
     hostname: file_download_service_0
     networks:
-      - iris0
+    - iris0
 
   file_download_service_1:
     image: personalhealthtrain/file-download-service-iris:1
     hostname: file_download_service_1
     networks:
-      - iris1
-
-  file_download_service_2:
-    image: personalhealthtrain/file-download-service-iris:2
-    hostname: file_download_service_2
-    networks:
-    - iris2
-
+    - iris1
+  
 networks:
   iris0:
   iris1:
-  iris2:
+ 
