@@ -1,0 +1,27 @@
+version: "3.3"
+
+services:
+  # Data Service for Station 1
+  file_download_service_1:
+    image: personalhealthtrain/file-download-service-iris:1
+    hostname: file_download_service_1
+    networks:
+    - iris1
+  
+  station1:
+    image: personalhealthtrain/station:0.0.4
+    volumes:
+    - /run/docker.sock:/var/run/docker.sock
+    environment:
+      STATION_NAME: station1
+      STATION_ID: 1
+      STATION_RESOURCES_PHT_FILE_DOWNLOAD_SERVICE: http://file_download_service_1:5000
+      STATION_DOCKER_NETWORK: file-download-iris_iris1
+      STATION_REGISTRY_URI: http://134.2.9.126:5000
+      STATION_REGISTRY_NAMESPACE: namespace
+      STATION_REGISTRY_USERNAME: admin
+      STATION_REGISTRY_PASSWORD: adminpass
+
+networks:
+  iris1:
+ 
