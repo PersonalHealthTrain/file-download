@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   file_download_service_0:
-    image: personalhealthtrain/file-download-service-iris:0
+    image: personalhealthtrain/file-download-service:iris0
     hostname: file_download_service_0
     networks:
     - iris0

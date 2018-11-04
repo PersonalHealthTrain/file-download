@@ -3,7 +3,7 @@ version: "3.3"
 services:
   # Data Service for Station 1
   file_download_service_1:
-    image: personalhealthtrain/file-download-service-iris:1
+    image: personalhealthtrain/file-download-service:iris1
     hostname: file_download_service_1
     networks:
     - iris1

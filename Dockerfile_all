@@ -1,0 +1,4 @@
+FROM lukaszimmermann/file-download-service:0.0.1
+RUN rm -rf /opt/files && sync
+COPY files /opt/files
+
